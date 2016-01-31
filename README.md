@@ -1,6 +1,12 @@
 # asterisk-docker
 
-Once it's up you can access the containers shell with
+Converts IVRs to PCMA, PCMU and G729
 
-docker exec -it {container_name} /bin/bash 
+1. Place files you want to convert into the /in directory
+2. Build docker file with
 
+docker build -t asdocker
+
+3. Run it to convert with 
+
+docker run  -v {path-to-repo}/in:/home/in -v {path-to-repo}/out:/home/out -it asdocker
